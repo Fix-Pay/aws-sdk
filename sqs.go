@@ -13,7 +13,7 @@ import (
 )
 
 func ReadQueue(url string) ([]*sqs.Message, error) {
-	svc := goutils.Svc()
+	svc := goutils.ConectionSQS()
 
 	result, err := ConsultSqs(svc, url)
 
@@ -52,7 +52,7 @@ func ConsultSqs(svc *sqs.SQS, url string) (*sqs.ReceiveMessageOutput, error) {
 	Removendo a fila
 */
 func DeleteMessage(message *sqs.Message, url string) error {
-	svc := goutils.Svc()
+	svc := goutils.ConectionSQS()
 
 	resultDelete, err := svc.DeleteMessage(&sqs.DeleteMessageInput{
 		QueueUrl:      &url,
