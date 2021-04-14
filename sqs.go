@@ -68,9 +68,15 @@ func DeleteMessage(message *sqs.Message, url string) error {
 	return err
 }
 
-func SendMessage(message string, estab string, usuario string, usuario_id string) (*sqs.SendMessageOutput, error) {
-	messageenciodificada := goutils.EncodeStringToBase64(message)
+func GenerateMessage(itens []interface{}) string {
+	messagesqsfixpay := ""
+	for _, item := range itens {
+		messagesqsfixpay += item.(string)
+	}
+	return messagesqsfixpay
+}
 
+func SendMessage(message string) (*sqs.SendMessageOutput, error) {
 	sess := session.Must(session.NewSession(&aws.Config{
 		MaxRetries:                    aws.Int(1),
 		CredentialsChainVerboseErrors: aws.Bool(true),
@@ -82,13 +88,10 @@ func SendMessage(message string, estab string, usuario string, usuario_id string
 	cfgs.Region = &regian
 
 	svc := sqs.New(sess, &cfgs)
-
-	messagesqsfixpay := "LinkPagItem|" + messageenciodificada + ";" + estab + ";" + usuario + ";" + usuario_id
-
 	resultsend, err := svc.SendMessage(&sqs.SendMessageInput{
 		DelaySeconds: aws.Int64(10),
 
-		MessageBody: aws.String(messagesqsfixpay),
+		MessageBody: aws.String(message),
 		QueueUrl:    aws.String(goutils.Godotenv("ecsqs")),
 	})
 
