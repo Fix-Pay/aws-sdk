@@ -76,7 +76,7 @@ func GenerateMessage(itens []interface{}) string {
 	return messagesqsfixpay
 }
 
-func SendMessage(message string) (*sqs.SendMessageOutput, error) {
+func SendMessage(message, queueUrl string) (*sqs.SendMessageOutput, error) {
 	sess := session.Must(session.NewSession(&aws.Config{
 		MaxRetries:                    aws.Int(1),
 		CredentialsChainVerboseErrors: aws.Bool(true),
@@ -92,7 +92,7 @@ func SendMessage(message string) (*sqs.SendMessageOutput, error) {
 		DelaySeconds: aws.Int64(10),
 
 		MessageBody: aws.String(message),
-		QueueUrl:    aws.String(goutils.Godotenv("ecsqs")),
+		QueueUrl:    aws.String(queueUrl),
 	})
 
 	return resultsend, err
