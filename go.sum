@@ -21,6 +21,8 @@ github.com/armando-couto/goutils v1.8.6 h1:og9O+pI8hzP3+7d1isBvSww2E/2U/1L0XfWHg
 github.com/armando-couto/goutils v1.8.6/go.mod h1:TI8+P7XcImgKiFN4SyOMQnO/aMBaWHujsHsnjenCQtk=
 github.com/armando-couto/goutils v1.9.1 h1:kKofk0HEwFU6FXnW2YJ+XX9YON/MrWav05HloZOzpU8=
 github.com/armando-couto/goutils v1.9.1/go.mod h1:TI8+P7XcImgKiFN4SyOMQnO/aMBaWHujsHsnjenCQtk=
+github.com/armando-couto/goutils v1.9.3 h1:lbHZsD4EucYXMqqFI6JkknIlQvOZhkt2e79+UfoU2y8=
+github.com/armando-couto/goutils v1.9.3/go.mod h1:TI8+P7XcImgKiFN4SyOMQnO/aMBaWHujsHsnjenCQtk=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
 github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da/go.mod h1:Q73ZrmVTwzkszR9V5SSuryQ31EELlFMUz1kKyl939pY=
 github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310/go.mod h1:ufUuZ+zHj4x4TnLV4JWEpy2hxWSpsRywHrMgIH9cCH8=
@@ -447,6 +449,8 @@ golang.org/x/sys v0.0.0-20210421221651-33663a62ff08 h1:qyN5bV+96OX8pL78eXDuz6YlD
 golang.org/x/sys v0.0.0-20210421221651-33663a62ff08/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210423185535-09eb48e85fd7 h1:iGu644GcxtEcrInvDsQRCwJjtCIOlT2V7IRt6ah2Whw=
 golang.org/x/sys v0.0.0-20210423185535-09eb48e85fd7/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20210426080607-c94f62235c83 h1:kHSDPqCtsHZOg0nVylfTo20DDhE9gG4Y0jn7hKQ0QAM=
+golang.org/x/sys v0.0.0-20210426080607-c94f62235c83/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
