@@ -18,7 +18,7 @@ func ReadQueue(url string) ([]*sqs.Message, error) {
 	result, err := ConsultSqs(svc, url)
 
 	if err != nil {
-		goutils.CreateFileDay(fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n"))
+		goutils.CreateFileDayError(fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n"))
 		return nil, err
 	} else {
 		if len(result.Messages) == 0 {
@@ -59,10 +59,10 @@ func DeleteMessage(message *sqs.Message, url string) error {
 		ReceiptHandle: message.ReceiptHandle,
 	})
 	if err != nil {
-		goutils.CreateFileDay(fmt.Sprint("Delete Error: ", err.Error()))
+		goutils.CreateFileDayError(fmt.Sprint("Delete Error: ", err.Error()))
 		return err
 	} else {
-		goutils.CreateFileDay(fmt.Sprint("Mensagem deletada com sucesso.", resultDelete))
+		goutils.CreateFileDayInfo(fmt.Sprint("Mensagem deletada com sucesso.", resultDelete))
 		return nil
 	}
 	return err
