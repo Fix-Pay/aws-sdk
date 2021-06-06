@@ -15,7 +15,18 @@ import (
 func ReadQueue(url string) ([]*sqs.Message, error) {
 	svc := goutils.ConectionSQS()
 
-	result, err := ConsultSqs(svc, url)
+	result, err := svc.ReceiveMessage(&sqs.ReceiveMessageInput{
+		AttributeNames: []*string{
+			aws.String(sqs.MessageSystemAttributeNameSentTimestamp),
+		},
+		MessageAttributeNames: []*string{
+			aws.String(sqs.QueueAttributeNameAll),
+		},
+		QueueUrl:            &url,
+		MaxNumberOfMessages: aws.Int64(10),
+		VisibilityTimeout:   aws.Int64(1), // 1 seconds
+		WaitTimeSeconds:     aws.Int64(0),
+	})
 
 	if err != nil {
 		goutils.CreateFileDayError(fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n"))
@@ -34,7 +45,6 @@ func ReadQueue(url string) ([]*sqs.Message, error) {
 func ConsultSqs(svc *sqs.SQS, url string) (*sqs.ReceiveMessageOutput, error) {
 	result, err := svc.ReceiveMessage(&sqs.ReceiveMessageInput{
 		AttributeNames: []*string{
-
 			aws.String(sqs.MessageSystemAttributeNameSentTimestamp),
 		},
 		MessageAttributeNames: []*string{
