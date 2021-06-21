@@ -33,7 +33,6 @@ func ReadQueue(url string) ([]*sqs.Message, error) {
 		return nil, err
 	} else {
 		if len(result.Messages) == 0 {
-			fmt.Print("Aparentemente não há mensagens na fila => " + url + " \n")
 			err = errors.New("Aparentemente não há mensagens na fila => " + url + " \n")
 			return nil, err
 		}
