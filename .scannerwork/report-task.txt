@@ -1,0 +1,6 @@
+projectKey=aws-sdk
+serverUrl=http://sonarqube.fixpay.com.br:9001
+serverVersion=8.9.1.44547
+dashboardUrl=http://sonarqube.fixpay.com.br:9001/dashboard?id=aws-sdk
+ceTaskId=AXtengMQVaEEFsansOQs
+ceTaskUrl=http://sonarqube.fixpay.com.br:9001/api/ce/task?id=AXtengMQVaEEFsansOQs
