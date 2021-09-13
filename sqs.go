@@ -98,3 +98,25 @@ func SendMessage(message, queueUrl string) (*sqs.SendMessageOutput, error) {
 
 	return resultsend, err
 }
+
+func SendMessageWithAttibute(message string, attributes map[string]*sqs.MessageAttributeValue, queueUrl string) (*sqs.SendMessageOutput, error) {
+	sess := session.Must(session.NewSession(&aws.Config{
+		MaxRetries:                    aws.Int(1),
+		CredentialsChainVerboseErrors: aws.Bool(true),
+		HTTPClient:                    &http.Client{Timeout: 10 * time.Second},
+	}))
+
+	cfgs := aws.Config{}
+	regian := "us-east-1"
+	cfgs.Region = &regian
+
+	svc := sqs.New(sess, &cfgs)
+	resultsend, err := svc.SendMessage(&sqs.SendMessageInput{
+		DelaySeconds: aws.Int64(10),
+		MessageBody: aws.String(message),
+		MessageAttributes: attributes,
+		QueueUrl:    aws.String(queueUrl),
+	})
+
+	return resultsend, err
+}
