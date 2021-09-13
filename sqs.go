@@ -99,7 +99,7 @@ func SendMessage(message, queueUrl string) (*sqs.SendMessageOutput, error) {
 	return resultsend, err
 }
 
-func SendMessageWithAttibute(message string, attributes map[string]*sqs.MessageAttributeValue, queueUrl string) (*sqs.SendMessageOutput, error) {
+func SendMessageWithAttribute(message string, attributes map[string]*sqs.MessageAttributeValue, queueUrl string) (*sqs.SendMessageOutput, error) {
 	sess := session.Must(session.NewSession(&aws.Config{
 		MaxRetries:                    aws.Int(1),
 		CredentialsChainVerboseErrors: aws.Bool(true),
