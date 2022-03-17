@@ -1,6 +1,0 @@
-projectKey=aws-sdk
-serverUrl=http://sonarqube.fixpay.com.br:8010
-serverVersion=9.2.2.50622
-dashboardUrl=http://sonarqube.fixpay.com.br:8010/dashboard?id=aws-sdk
-ceTaskId=AX3D8qc8zDbusIGVmbBf
-ceTaskUrl=http://sonarqube.fixpay.com.br:8010/api/ce/task?id=AX3D8qc8zDbusIGVmbBf
