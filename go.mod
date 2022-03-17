@@ -3,7 +3,7 @@ module github.com/Fix-Pay/aws-sdk
 go 1.15
 
 require (
-	github.com/armando-couto/goutils v1.15.1
+	github.com/armando-couto/goutils v1.19.2
 	github.com/aws/aws-sdk-go v1.40.41
 	github.com/go-kit/kit v0.10.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect

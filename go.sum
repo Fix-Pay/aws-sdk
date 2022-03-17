@@ -25,6 +25,12 @@ github.com/armando-couto/goutils v1.9.3 h1:lbHZsD4EucYXMqqFI6JkknIlQvOZhkt2e79+U
 github.com/armando-couto/goutils v1.9.3/go.mod h1:TI8+P7XcImgKiFN4SyOMQnO/aMBaWHujsHsnjenCQtk=
 github.com/armando-couto/goutils v1.15.1 h1:i6kN+6k3i56wRZlw9s0oel4pC9L5jHg5g2AW1iTJ+pc=
 github.com/armando-couto/goutils v1.15.1/go.mod h1:MggUR5dyJOr0brRgi5FQuRcMPdNi0pJ4LqIFCrAzjG0=
+github.com/armando-couto/goutils v1.19.0 h1:LPJmvwzyjm8hscCZY0WmBe23SgZZH+sIuFTBfh/MPjM=
+github.com/armando-couto/goutils v1.19.0/go.mod h1:MggUR5dyJOr0brRgi5FQuRcMPdNi0pJ4LqIFCrAzjG0=
+github.com/armando-couto/goutils v1.19.1 h1:hzbWsHPxKIB3A9wIAjClzZb4Xe0xWSye5vUskbXJPO0=
+github.com/armando-couto/goutils v1.19.1/go.mod h1:MggUR5dyJOr0brRgi5FQuRcMPdNi0pJ4LqIFCrAzjG0=
+github.com/armando-couto/goutils v1.19.2 h1:TObAgxDTgOybb1LffTtw+v9IRJireKEc/POS9n6KNL8=
+github.com/armando-couto/goutils v1.19.2/go.mod h1:MggUR5dyJOr0brRgi5FQuRcMPdNi0pJ4LqIFCrAzjG0=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
 github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da/go.mod h1:Q73ZrmVTwzkszR9V5SSuryQ31EELlFMUz1kKyl939pY=
 github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310/go.mod h1:ufUuZ+zHj4x4TnLV4JWEpy2hxWSpsRywHrMgIH9cCH8=

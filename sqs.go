@@ -17,7 +17,7 @@ func ReadQueue(url string) ([]*sqs.Message, error) {
 	result, err := svc.ReceiveMessage(receive(url))
 
 	if err != nil {
-		goutils.CreateFileDayError(fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n"))
+		goutils.CreateFileDay(goutils.FormatMessage(goutils.Message{Error: fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n")}))
 		return nil, err
 	} else {
 		if len(result.Messages) == 0 {
@@ -60,10 +60,10 @@ func DeleteMessage(message *sqs.Message, url string) error {
 		ReceiptHandle: message.ReceiptHandle,
 	})
 	if err != nil {
-		goutils.CreateFileDayError(fmt.Sprint("Delete Error: ", err.Error()))
+		goutils.CreateFileDay(goutils.FormatMessage(goutils.Message{Error: fmt.Sprint("Delete Error: ", err.Error())}))
 		return err
 	} else {
-		goutils.CreateFileDayInfo(fmt.Sprint("Mensagem deletada com sucesso.", resultDelete))
+		goutils.CreateFileDay(goutils.FormatMessage(goutils.Message{Info: fmt.Sprint("Mensagem deletada com sucesso.", resultDelete)}))
 		return nil
 	}
 	return err
@@ -112,10 +112,10 @@ func SendMessageWithAttribute(message string, attributes map[string]*sqs.Message
 
 	svc := sqs.New(sess, &cfgs)
 	resultsend, err := svc.SendMessage(&sqs.SendMessageInput{
-		DelaySeconds: aws.Int64(10),
-		MessageBody: aws.String(message),
+		DelaySeconds:      aws.Int64(10),
+		MessageBody:       aws.String(message),
 		MessageAttributes: attributes,
-		QueueUrl:    aws.String(queueUrl),
+		QueueUrl:          aws.String(queueUrl),
 	})
 
 	return resultsend, err
