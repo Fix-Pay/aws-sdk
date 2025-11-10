@@ -17,7 +17,7 @@ func ReadQueue(url string) ([]*sqs.Message, error) {
 	result, err := svc.ReceiveMessage(receive(url))
 
 	if err != nil {
-		goutils.CreateFileDay(goutils.Message{Error: fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n")})
+		goutils.CreateFileDay(goutils.Message{Error: fmt.Sprint("Ocorreu um erro: '", err.Error(), "'\n no metodo LerFila(). \n")}, nil)
 		return nil, err
 	} else {
 		if len(result.Messages) == 0 {
@@ -50,7 +50,7 @@ func receive(url string) *sqs.ReceiveMessageInput {
 }
 
 /*
-	Removendo a fila
+Removendo a fila
 */
 func DeleteMessage(message *sqs.Message, url string) error {
 	svc := goutils.ConectionSQS()
@@ -60,10 +60,10 @@ func DeleteMessage(message *sqs.Message, url string) error {
 		ReceiptHandle: message.ReceiptHandle,
 	})
 	if err != nil {
-		goutils.CreateFileDay(goutils.Message{Error: fmt.Sprint("Delete Error: ", err.Error())})
+		goutils.CreateFileDay(goutils.Message{Error: fmt.Sprint("Delete Error: ", err.Error())}, nil)
 		return err
 	} else {
-		goutils.CreateFileDay(goutils.Message{Info: fmt.Sprint("Mensagem deletada com sucesso.", resultDelete)})
+		goutils.CreateFileDay(goutils.Message{Info: fmt.Sprint("Mensagem deletada com sucesso.", resultDelete)}, nil)
 		return nil
 	}
 	return err
